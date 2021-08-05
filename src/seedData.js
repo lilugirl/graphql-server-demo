@@ -19,6 +19,7 @@ const createDatabase=()=>{
 }
 
 const insertData=()=>{
+   
     let {users,posts,usersFriends}=data;
 
     let queries=[
@@ -30,6 +31,7 @@ const insertData=()=>{
     let promises=queries.map((query)=>{
         return ()=>database.getSql(query)
     });
+    
     return sequencePromises(promises)
 }
 
